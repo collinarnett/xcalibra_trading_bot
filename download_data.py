@@ -31,8 +31,6 @@ def get_data(interval, pair):
     # Flatten list for easy dataframe import
     cleaned_data = [item for sublist in data for item in sublist]
     df = pd.DataFrame(cleaned_data)
-    # Fill None values
-    df.fillna(value=0, inplace=True)
     # Flip DataFrame
     df.iloc[:] = df.iloc[::-1].values
     # Change 'volume' and 'quantity' from string to numeric
@@ -63,8 +61,8 @@ if __name__ == "__main__":
         "hour",
         "minute",
     ]
-    p = Path('data')
-    p.mkdir(exists_ok=True)
+    p = Path("data")
+    p.mkdir(exist_ok=True)
     for interval in tqdm(intervals, desc="interval"):
         for pair in tqdm(pairs, desc="pairs"):
             if Path(f"../data/{pair}_{interval}.csv").exists() is False:
