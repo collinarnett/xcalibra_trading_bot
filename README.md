@@ -1,6 +1,6 @@
-# SafeX Trading Bot 
+# Xcalibra Trading Bot 
 
-Bot that takes historical data and trains a basic machine learning model to trade safex cash.
+Bot that takes historical data and trains a machine learning model capable of portfolio management.
   
 Currently looking at https://arxiv.org/pdf/1706.10059.pdf for inspiration.
   
